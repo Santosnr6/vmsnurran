@@ -34,6 +34,23 @@ export const getGroupGames = async (group) => {
     }
 }
 
+export const getFinishedGames = async () => {
+    try {
+        const result = await Game.find({ status : 'finished' });
+        if(result) {
+            return {
+                success : true,
+                games : result
+            }
+        } else throw new Error('No games found');
+    } catch(error) {
+        return {
+            success : false,
+            message : error.message
+        }
+    }
+}
+
 export const updateGame = async (id, score) => {
     try {
         const game = await Game.findOne({ gameNumber : id });

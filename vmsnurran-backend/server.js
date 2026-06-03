@@ -5,6 +5,7 @@ import { errorHandler } from './middlewares/errorHandler.middleware.js';
 import authRouter from './routes/auth.route.js';
 import gamesRouter from './routes/games.route.js';
 import predictionsRouter from './routes/predictions.route.js';
+import leaderboardRouter from './routes/leaderboard.route.js';
 
 // Config
 const app = express();
@@ -20,6 +21,7 @@ app.use(express.json());
 app.use('/api/auth', authRouter);
 app.use('/api/games', gamesRouter);
 app.use('/api/predictions', predictionsRouter);
+app.use('/api/leaderboard', leaderboardRouter);
 
 // Database
 database.on('error', (error) => console.log(error));
