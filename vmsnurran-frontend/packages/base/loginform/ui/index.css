@@ -1,0 +1,31 @@
+.form {
+    background-color: var(--blue-dark);
+    padding: 2rem;
+    border-radius: 25px;
+    display: grid;
+    gap: 1rem;
+    width: 100%;
+
+    .form__label {
+        display: grid;
+        gap: .25rem;
+        font-size: 1.rem;
+        color: var(--grey);
+
+        .form__input {
+            padding: .75rem 1rem;
+            background-color: var(--blue-light);
+            border: none;
+            border-radius: 15px;
+            color: var(--white);
+        }
+    }
+
+    .form__text {
+        text-align: center;
+        
+        .form__link {
+            color: var(--blue);
+        }
+    }
+}

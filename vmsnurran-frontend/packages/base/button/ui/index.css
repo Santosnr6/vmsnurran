@@ -1,0 +1,20 @@
+.button {
+    padding: 1rem 2rem;
+    border: none;
+    cursor: pointer;
+    border-radius: 20px;
+    font-weight: 700;
+    font-size: 1.25rem;
+}
+
+.button--solid {
+    background-color: var(--blue);
+    border: 2px solid var(--blue);
+    color: var(--white);
+}
+
+.button--outlined {
+    background-color: transparent;
+    border: 2px solid var(--blue);
+    color: var(--blue);
+}

@@ -1,6 +1,7 @@
 import express from 'express';
 import mongoose from 'mongoose';
 import dotenv from 'dotenv';
+import cors from 'cors';
 import { errorHandler } from './middlewares/errorHandler.middleware.js';
 import authRouter from './routes/auth.route.js';
 import gamesRouter from './routes/games.route.js';
@@ -17,6 +18,7 @@ const database = mongoose.connection;
 
 // Middlewares
 app.use(express.json());
+app.use(cors());
 
 // Routes
 app.use('/api/auth', authRouter);

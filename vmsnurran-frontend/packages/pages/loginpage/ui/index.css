@@ -1,0 +1,13 @@
+.page__trophy-container {
+    background: var(--blue-dark);
+    padding: .75rem;
+    display: grid;
+    place-items: center;
+    border-radius: 5px;
+    
+    .page__login-trophy {
+        width: 30px;
+        height: 30px;
+        color: var(--yellow);
+    }
+}
