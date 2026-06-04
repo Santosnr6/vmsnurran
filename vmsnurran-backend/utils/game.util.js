@@ -5,9 +5,13 @@ export function calculateGamePoints(prediction, game) {
 
     const predictedHome = prediction.homeScore;
     const predictedAway = prediction.awayScore;
+    console.log('predictedHome', predictedHome);
+    console.log('predictedAway', predictedAway);
 
     const actualHome = game.homeScore;
     const actualAway = game.awayScore;
+    console.log('actualHome', actualHome);
+    console.log('actualAway', actualAway);
 
     // Exakt resultat
     if (

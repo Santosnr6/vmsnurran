@@ -4,7 +4,6 @@ const predictionSchema = new mongoose.Schema(
     {
         userId: {
             type: String,
-            ref: "User",
             required: true,
             unique: true,
         },
@@ -12,7 +11,6 @@ const predictionSchema = new mongoose.Schema(
             {
                 gameId: {
                     type: String,
-                    ref: "Match",
                     required: true,
                 },
                 homeScore: {

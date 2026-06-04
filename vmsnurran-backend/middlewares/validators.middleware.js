@@ -23,7 +23,7 @@ export const validateScoreBody = (req, res, next) => {
         });
     }
     const { homeScore, awayScore } = req.body;
-    if(!homeScore || !awayScore) {
+    if(homeScore === undefined || awayScore === undefined) {
         return next({
             status : 401,
             message : 'Both homeScore and awayScore are required'

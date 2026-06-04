@@ -17,6 +17,22 @@ export const addNewUser = async (user) => {
 }
 
 // Get user
+export const getUsers = async () => {
+    try {
+        const result = await User.find();
+        return {
+            success : true,
+            users : result
+        }
+    } catch(error) {
+        return {
+            success : false,
+            message : error.message
+        }
+    }
+}
+
+// Get user
 export const getUser = async (username) => {
     try {
         const result = await User.findOne({ username });
