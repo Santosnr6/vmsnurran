@@ -4,6 +4,7 @@ import { getMyPredictions } from '@vmsnurran/predictions';
 import { useAuthStore } from '@vmsnurran/authstore';
 import { useEffect } from 'react';
 import { PredictionView } from '@vmsnurran/predictionview';
+import { MyPredictionView } from '@vmsnurran/mypredictionview';
 
 export const MyPage = () => {
     const { token } = useAuthStore();
@@ -38,7 +39,9 @@ export const MyPage = () => {
             <h1 className="page__title">Mitt VM-tips</h1>
 
             {hasPredictions ? (
-                <h2 className="page__subtitle">Dina predictions</h2>
+                <>
+                    <MyPredictionView predictions={ predictions.prediction } />
+                </>
             ) : (
                 <>
                     <h2 className="page__subtitle">Gör dina VM-tips för 2026 nedan</h2>

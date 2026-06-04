@@ -1,0 +1,23 @@
+.my-score {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    width: 100%;
+
+    .my-score__title {
+        font-size: 1rem;
+    }
+}
+
+.my-bonus {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    width: 100%;
+
+    .my-score__title {
+        font-size: 1rem;
+    }
+}

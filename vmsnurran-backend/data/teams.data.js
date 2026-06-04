@@ -8,28 +8,28 @@ export const teams = {
     },
     RSA: {
         code: "RSA",
-        name: "South Africa",
+        name: "Sydafrika",
         flag: "🇿🇦",
     },
     KOR: {
         code: "KOR",
-        name: "South Korea",
+        name: "Sydkorea",
         flag: "🇰🇷",
     },
     CZE: {
         code: "CZE",
-        name: "Czech Republic",
+        name: "Tjeckien",
         flag: "🇨🇿",
     },
         CAN: {
         code: "CAN",
-        name: "Canada",
+        name: "Kanada",
         flag: "🇨🇦",
     },
 
     BIH: {
         code: "BIH",
-        name: "Bosnia and Herzegovina",
+        name: "Bosnien Hercegovina",
         flag: "🇧🇦",
     },
 
@@ -41,18 +41,18 @@ export const teams = {
 
     SUI: {
         code: "SUI",
-        name: "Switzerland",
+        name: "Schweiz",
         flag: "🇨🇭",
     },
     BRA: {
         code: "BRA",
-        name: "Brazil",
+        name: "Brasilien",
         flag: "🇧🇷",
     },
 
     MAR: {
         code: "MAR",
-        name: "Morocco",
+        name: "Marocko",
         flag: "🇲🇦",
     },
 
@@ -63,12 +63,12 @@ export const teams = {
     },
     SCO: {
         code: "SCO",
-        name: "Scotland",
+        name: "Skottland",
         flag: "🏴",
     },
     USA: {
         code: "USA",
-        name: "United States",
+        name: "USA",
         flag: "🇺🇸",
     },
     PAR: {
@@ -78,18 +78,18 @@ export const teams = {
     },
     AUS: {
         code: "AUS",
-        name: "Australia",
+        name: "Australien",
         flag: "🇦🇺",
     },
 
     TUR: {
         code: "TUR",
-        name: "Turkey",
+        name: "Turkiet",
         flag: "🇹🇷",
     },
     GER: {
         code: "GER",
-        name: "Germany",
+        name: "Tyskland",
         flag: "🇩🇪",
     },
 
@@ -101,7 +101,7 @@ export const teams = {
 
     CIV: {
         code: "CIV",
-        name: "Ivory Coast",
+        name: "Elfenbenskusten",
         flag: "🇨🇮",
     },
 
@@ -112,7 +112,7 @@ export const teams = {
     },
     NED: {
         code: "NED",
-        name: "Netherlands",
+        name: "Holland",
         flag: "🇳🇱",
     },
 
@@ -124,18 +124,18 @@ export const teams = {
 
     SWE: {
         code: "SWE",
-        name: "Sweden",
+        name: "Sverige",
         flag: "🇸🇪",
     },
 
     TUN: {
         code: "TUN",
-        name: "Tunisia",
+        name: "Tunisien",
         flag: "🇹🇳",
     },
     BEL: {
         code: "BEL",
-        name: "Belgium",
+        name: "Belgien",
         flag: "🇧🇪",
     },
 
@@ -153,7 +153,122 @@ export const teams = {
 
     NZL: {
         code: "NZL",
-        name: "New Zealand",
+        name: "Nya Zeeland",
         flag: "🇳🇿",
+    },
+    ESP: {
+        code: "ESP",
+        name: "Spanien",
+        flag: "🇪🇸",
+    },
+
+    KSA: {
+        code: "KSA",
+        name: "Saudi Arabien",
+        flag: "🇸🇦",
+    },
+
+    URU: {
+        code: "URU",
+        name: "Uruguay",
+        flag: "🇺🇾",
+    },
+
+    CPV: {
+        code: "CPV",
+        name: "Kap Verde",
+        flag: "🇨🇻",
+    },
+    FRA: {
+        code: "FRA",
+        name: "Frankrike",
+        flag: "🇫🇷",
+    },
+
+    SEN: {
+        code: "SEN",
+        name: "Senegal",
+        flag: "🇸🇳",
+    },
+
+    IRQ: {
+        code: "IRQ",
+        name: "Irak",
+        flag: "🇮🇶",
+    },
+
+    NOR: {
+        code: "NOR",
+        name: "Norge",
+        flag: "🇳🇴",
+    },
+    ARG: {
+        code: "ARG",
+        name: "Argentina",
+        flag: "🇦🇷",
+    },
+
+    ALG: {
+        code: "ALG",
+        name: "Algeriet",
+        flag: "🇩🇿",
+    },
+
+    AUT: {
+        code: "AUT",
+        name: "Österrike",
+        flag: "🇦🇹",
+    },
+
+    JOR: {
+        code: "JOR",
+        name: "Jordanien",
+        flag: "🇯🇴",
+    },
+    POR: {
+        code: "POR",
+        name: "Portugal",
+        flag: "🇵🇹",
+    },
+
+    COD: {
+        code: "COD",
+        name: "DR Kongo",
+        flag: "🇨🇩",
+    },
+
+    UZB: {
+        code: "UZB",
+        name: "Uzbekistan",
+        flag: "🇺🇿",
+    },
+
+    COL: {
+        code: "COL",
+        name: "Colombia",
+        flag: "🇨🇴",
+    },
+    ENG: {
+        code: "ENG",
+        name: "England",
+        flag: "🏴",
+    },
+
+    CRO: {
+        code: "CRO",
+        name: "Kroatien",
+        flag: "🇭🇷",
+    },
+
+    GHA: {
+        code: "GHA",
+        name: "Ghana",
+        flag: "🇬🇭",
+    },
+
+    PAN: {
+        code: "PAN",
+        name: "Panama",
+        flag: "🇵🇦",
     },
 };

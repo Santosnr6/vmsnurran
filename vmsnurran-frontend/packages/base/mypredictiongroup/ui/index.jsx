@@ -2,7 +2,7 @@ import './index.css';
 import { useState } from 'react';
 import { GameCard } from '@vmsnurran/gamecard';
 
-export const PredictionGroup = ({ group, games }) => {
+export const MyPredictionGroup = ({ group, games }) => {
     const [open, setOpen] = useState(false);
 
     return (
@@ -12,7 +12,7 @@ export const PredictionGroup = ({ group, games }) => {
                 type="button"
                 onClick={() => setOpen(!open)}
             >
-                <div className="group__info">
+                {/* <div className="group__info">
                     <span className="group__badge">
                         Grupp {group}
                     </span>
@@ -30,7 +30,7 @@ export const PredictionGroup = ({ group, games }) => {
                     }
                 >
                     ▼
-                </span>
+                </span> */}
             </button>
 
             <div
@@ -41,10 +41,7 @@ export const PredictionGroup = ({ group, games }) => {
                 }
             >
                 {games.map((game) => (
-                    <GameCard
-                        key={game.gameNumber}
-                        game={game}
-                    />
+                    <p>hej</p>
                 ))}
             </div>
         </section>

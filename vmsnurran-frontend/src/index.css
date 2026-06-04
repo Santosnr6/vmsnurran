@@ -10,7 +10,8 @@
   --silver: #182032;
   --bronze: #CD7F32;
 
-  --gold-bg: #424026;
+  --gold-bg: #373620;
+  --blue-bg: #101c35;
 
   --blue-dark: #131C2E;
   --blue-light: #182032;
@@ -35,4 +36,8 @@ h1, h2, h3, h4, h5 {
 
 p, a, .link, button, input, label {
   font-family: var(--font-body);
+}
+
+.wrapper {
+  margin-bottom: 1.5rem;
 }
