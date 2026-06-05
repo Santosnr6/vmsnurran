@@ -12,16 +12,15 @@ export const getLeaderboard = async (req, res, next) => {
                 game,
             ])
         );
-        
+
         const predictionDocuments = await getPredictions();
 
         const leaderboard = predictionDocuments.predictions.map((entry) => {
-            let totalPoints = 0;
+            let matchPoints = 0;
             let correctResults = 0;
             let correctOutcomes = 0;
 
             entry.predictions.forEach((prediction) => {
-                console.log('Prediction:', prediction);
                 const game = finishedGamesMap.get(
                     prediction.gameId.toString()
                 );
@@ -30,19 +29,30 @@ export const getLeaderboard = async (req, res, next) => {
 
                 const points = calculateGamePoints(prediction, game);
 
-                totalPoints += points;
+                matchPoints += points;
 
                 if (points === 3) correctResults++;
                 if (points === 1) correctOutcomes++;
             });
 
+            const bonusPoints = entry.bonusPoints || 0;
+            const totalPoints = matchPoints + bonusPoints;
+
             return {
                 userId: entry.userId,
                 username: entry.username,
-                name : entry.firstName + ' ' + entry.lastName,
+                name: entry.firstName + " " + entry.lastName,
+
                 totalPoints,
+                matchPoints,
+                bonusPoints,
+
                 correctResults,
                 correctOutcomes,
+
+                worldCupWinner: entry.worldCupWinner,
+                topGoalScorer: entry.topGoalScorer,
+                totalGoals: entry.totalGoals,
             };
         });
 
@@ -59,43 +69,58 @@ export const getLeaderboard = async (req, res, next) => {
 export const getUserLeaderboardEntry = async (req, res, next) => {
     try {
         const userId = req.user.userId;
+
         const finishedGames = await getFinishedGames();
+
         const finishedGamesMap = new Map(
             finishedGames.games.map((game) => [
                 game.gameNumber.toString(),
                 game,
             ])
         );
+
         const predictionDocuments = await getPredictions();
-        console.log('Prediction documents:', predictionDocuments);
+
         const userEntry = predictionDocuments.predictions.find(
             (entry) => entry.userId === userId
         );
-        console.log('User entry:', userEntry);
+
         if (!userEntry) {
-            return res.status(404).json({ message: "User entry not found" });
+            return res.status(404).json({
+                message: "User entry not found",
+            });
         }
 
-        let totalPoints = 0;
+        let matchPoints = 0;
         let correctResults = 0;
         let correctOutcomes = 0;
+
         userEntry.predictions.forEach((prediction) => {
             const game = finishedGamesMap.get(
                 prediction.gameId.toString()
             );
-            
+
             if (!game) return;
 
             const points = calculateGamePoints(prediction, game);
-            totalPoints += points;
+
+            matchPoints += points;
+
             if (points === 3) correctResults++;
             if (points === 1) correctOutcomes++;
         });
-    
+
+        const bonusPoints = userEntry.bonusPoints || 0;
+        const totalPoints = matchPoints + bonusPoints;
+
         res.json({
             userId: userEntry.userId,
             username: userEntry.username,
+            name: userEntry.firstName + " " + userEntry.lastName,
             totalPoints,
+            matchPoints,
+            bonusPoints,
+
             correctResults,
             correctOutcomes,
         });

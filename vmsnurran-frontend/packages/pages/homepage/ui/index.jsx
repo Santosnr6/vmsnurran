@@ -20,6 +20,7 @@ export const HomePage = () => {
     });
 
     console.log('Leaderboard:', leaderboardData);
+    const leaderboard = leaderboardData?.leaderboard.slice(0, 5);
 
     return (
         <div className="page__container">
@@ -60,7 +61,7 @@ export const HomePage = () => {
 
                 <ul className="page__leaderboard">
                     {
-                        leaderboardData?.leaderboard.map((user, index) => {
+                        leaderboard?.map((user, index) => {
                             return <LeaderboardEntry 
                                 position={index + 1}
                                 user={ user }

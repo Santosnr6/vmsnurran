@@ -25,7 +25,10 @@ const predictionSchema = new mongoose.Schema(
                 },
             },
         ],
-
+        bonusPoints: {
+            type: Number,
+            default: 0,
+        },
         worldCupWinner: {
             type: String,
             required: true,

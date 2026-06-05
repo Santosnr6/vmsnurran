@@ -4,9 +4,11 @@ import { Link } from 'react-router-dom';
 import { useMutation } from '@tanstack/react-query';
 import { register } from '@vmsnurran/auth';
 import { useNavigate } from 'react-router-dom';
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
+import { validateRegisterInput } from '@vmsnurran/validation';
 
 export const RegisterForm = () => {
+    const [errorMsg, setErrorMsg] = useState('');
     const firstnameRef = useRef();
     const lastnameRef = useRef();
     const usernameRef = useRef();
@@ -16,6 +18,23 @@ export const RegisterForm = () => {
 
     const handleRegister = (e) => {
         e.preventDefault();
+
+        const result = validateRegisterInput({
+            firstName: firstnameRef.current.value,
+            lastName: lastnameRef.current.value,
+            username: usernameRef.current.value,
+            password: passwordRef.current.value,
+        });
+
+        if (!result.success) {
+            setErrorMsg(result.error.issues[0].message);
+            return;
+        }
+
+        if (passwordRef.current.value !== passwordRepeatRef.current.value) {
+            setErrorMsg('Lösenorden matchar inte');
+            return;
+        }
 
         registerMutation.mutate({
             firstName : firstnameRef.current.value,
@@ -30,6 +49,12 @@ export const RegisterForm = () => {
         onSuccess: (data) => {
             navigate('/login');
         },
+        onError: (error) => {
+            console.log(error);
+            setErrorMsg(
+                'Kunde inte registrera'
+            );
+        }
     });
 
     return (
@@ -79,6 +104,9 @@ export const RegisterForm = () => {
                     ref={ passwordRepeatRef }
                 />
             </label>
+            {
+                errorMsg && <p className="form__error">{ errorMsg }</p>
+            }
             <Button 
                 text="Registrera"
                 type="solid"

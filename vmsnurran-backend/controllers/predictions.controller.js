@@ -1,4 +1,4 @@
-import { addNewPrediction, findPrediction, updatePrediction } from "../services/predictions.service.js";
+import { addNewPrediction, findPrediction, updatePrediction, updateBonusPoints } from "../services/predictions.service.js";
 
 export const getPrediction = async (req, res, next) => {
     const result = await findPrediction(req.user.userId);
@@ -47,6 +47,23 @@ export const updateUserPrediction = async (req, res, next) => {
         res.json({
             success : true,
             message : 'Prediction updated successfully'
+        });
+    } else {
+        next({
+            status : 404,
+            message : result.message
+        })
+    }
+}
+
+export const updateUserBonusPoints = async (req, res, next) => {
+    const { bonusPoints } = req.body;
+    const result = await updateBonusPoints(req.user.userId, bonusPoints);
+
+    if(result.success) {
+        res.json({
+            success : true,
+            message : 'Bonus points updated successfully'
         });
     } else {
         next({

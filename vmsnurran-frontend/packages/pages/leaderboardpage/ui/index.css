@@ -1,0 +1,22 @@
+.page__container {
+    width: 100%;
+    .page__leaderboard-section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+
+        .page__leaderboard {
+            width: 100%;
+        }
+    }
+}
+
+.page__title {
+    text-align: center;
+}
+
+.page__subtitle {
+    text-align: center;
+    font-size: 1.25rem;
+}

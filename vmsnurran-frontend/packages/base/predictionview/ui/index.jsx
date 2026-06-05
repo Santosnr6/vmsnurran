@@ -5,8 +5,11 @@ import { getTeams } from '@vmsnurran/teams';
 import './index.css';
 import { Button } from '@vmsnurran/button';
 import { createPrediction } from '@vmsnurran/predictions';
+import { validateTextInput, validateNumberInput } from '@vmsnurran/validation';
+import { useState } from 'react';
 
 export const PredictionView = () => {
+    const [errorMsg, setErrorMsg] = useState('');
     const queryClient = useQueryClient();
     const groups = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L'];
 
@@ -93,6 +96,15 @@ export const PredictionView = () => {
         const topGoalScorer = formData.get('topGoalScorer');
         const totalGoals = formData.get('totalGoals');
 
+        const resultWinner = validateTextInput(worldCupWinner);
+        const resultTopScorer = validateTextInput(topGoalScorer);
+        const resultTotalGoals = validateNumberInput(totalGoals);
+
+        if(!resultWinner.success) setErrorMsg('Välj en VM-vinnare');
+        else if(!resultTopScorer.success) setErrorMsg('Ange en skyttekung');
+        else if(!resultTotalGoals.success) setErrorMsg('Ange ett giltigt antal mål');
+        else setErrorMsg('');
+
         const hasMissingGamePrediction = predictions.some((prediction) =>
             Number.isNaN(prediction.homeScore) ||
             Number.isNaN(prediction.awayScore)
@@ -140,7 +152,6 @@ export const PredictionView = () => {
                         id="worldCupWinner"
                         className="form__select"
                         defaultValue=""
-                        required
                     >
                         <option value="" disabled>
                             Välj VM-vinnare
@@ -161,7 +172,6 @@ export const PredictionView = () => {
                         name="topGoalScorer"
                         className="form__input"
                         placeholder="Gyökeres"
-                        required
                     />
                 </label>
 
@@ -173,9 +183,9 @@ export const PredictionView = () => {
                         className="form__input"
                         placeholder="150"
                         min="0"
-                        required
                     />
                 </label>
+                {errorMsg && <p className="form__error">{ errorMsg }</p>}
             </section>
 
             {createPredictionMutation.isError && (

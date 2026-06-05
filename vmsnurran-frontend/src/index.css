@@ -34,7 +34,7 @@ h1, h2, h3, h4, h5 {
   font-family: var(--font-heading);
 }
 
-p, a, .link, button, input, label {
+p, a, .nav__link, .link, button, input, label {
   font-family: var(--font-body);
 }
 

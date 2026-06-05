@@ -78,3 +78,17 @@ export const updatePrediction = async (prediction) => {
     }
 }
 
+export const updateBonusPoints = async (userId, bonusPoints) => {
+    try {
+        const result = await Prediction.findOneAndUpdate({userId}, {bonusPoints});
+        return {
+            success : true,
+            prediction : result
+        }
+    } catch(error) {
+        return {
+            success : false,
+            message : error.message
+        }
+    }
+}

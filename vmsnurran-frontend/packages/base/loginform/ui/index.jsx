@@ -4,15 +4,29 @@ import { Link } from 'react-router-dom';
 import { useMutation } from '@tanstack/react-query';
 import { login } from '@vmsnurran/auth';
 import { useAuthStore } from '@vmsnurran/authstore'; 
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
+import { validateLoginInput } from '@vmsnurran/validation';
 
 export const LoginForm = () => {
+    const [errorMsg, setErrorMsg] = useState('');
     const { setAuth } = useAuthStore();
     const usernameRef = useRef();
     const passwordRef = useRef();
 
     const handleLogin = (e) => {
         e.preventDefault();
+
+        const result = validateLoginInput({
+            username: usernameRef.current.value,
+            password: passwordRef.current.value,
+        });
+
+        if (!result.success) {
+            setErrorMsg(result.error.issues[0].message);
+            return;
+        }
+
+        setErrorMsg('');
 
         loginMutation.mutate({
             username : usernameRef.current.value,
@@ -24,11 +38,19 @@ export const LoginForm = () => {
         mutationFn: login,
         onSuccess: (data) => {
             setAuth({
-                user: data.user,
+                user: usernameRef.current.value,
                 token: data.token,
+                role: data.role
             });
-            navigate("/me");
+            if(data.role === 'admin') navigate('/admin');
+            else navigate("/me");
         },
+        onError: (error) => {
+            console.log(error);
+            setErrorMsg(
+                'Felakt användarnamn eller lösenord'
+            );
+        }
     });
 
     return (
@@ -52,11 +74,7 @@ export const LoginForm = () => {
                 />
             </label>
             {
-                loginMutation.isError && (
-                <p>
-                    Felaktigt användarnamn eller lösenord
-                </p>
-                )
+                errorMsg && <p className="form__error">{ errorMsg }</p>
             }
             <Button 
                 text="Logga in"

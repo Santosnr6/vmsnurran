@@ -5,9 +5,16 @@ import { useAuthStore } from '@vmsnurran/authstore';
 import { useEffect } from 'react';
 import { PredictionView } from '@vmsnurran/predictionview';
 import { MyPredictionView } from '@vmsnurran/mypredictionview';
+import { useNavigate } from 'react-router-dom';
 
 export const MyPage = () => {
-    const { token } = useAuthStore();
+    const { token, role } = useAuthStore();
+    const navigate = useNavigate();
+    useEffect(() => {
+        console.log('Role:', role);
+        
+        if(role === 'admin') navigate('/admin');
+    }, [role]);
     const { data: predictions, isLoading, isError, error } = useQuery({
         queryKey: ['my-predictions'],
         queryFn: getMyPredictions,
