@@ -117,6 +117,7 @@ export const MyPredictionView = ({ predictions }) => {
                             group={ group }
                             games={ gamesByGroup[group] }
                             key={ group }
+                            predictions={ predictions }
                         />
                     })
                 }

@@ -4,10 +4,8 @@ import { getLeaderboard, getUserLeaderboardEntry } from '../controllers/leaderbo
 
 const router = Router();
 
-router.use(authenticateUser);
-
 router.get('/', getLeaderboard);
-router.get('/me', getUserLeaderboardEntry);
+router.get('/me', authenticateUser, getUserLeaderboardEntry);
 
 
 export default router;

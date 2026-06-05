@@ -1,0 +1,35 @@
+.leaderboard-item {
+    width: 100%;
+    padding: 1rem;
+    display: flex;
+    gap: 1rem;
+
+    .leaderboard-item__points {
+        margin-left: auto;
+    }
+}
+
+.leaderboard-item:nth-child(odd) {
+    background-color: var(--blue-dark);
+}
+
+.leaderboard-item:nth-child(even) {
+    background-color: var(--blue-light);
+}
+
+.leaderboard-item:nth-child(1) {
+    border-left: 5px solid var(--gold);
+}
+
+.leaderboard-item:nth-child(2) {
+    border-left: 5px solid silver;
+}
+
+.leaderboard-item:nth-child(3) {
+    border-left: 5px solid var(--bronze);
+}
+
+.leaderboard-item:last-child {
+    border-bottom: none;
+}
+

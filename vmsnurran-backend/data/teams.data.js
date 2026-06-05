@@ -4,271 +4,271 @@ export const teams = {
     MEX: {
         code: "MEX",
         name: "Mexico",
-        flag: "🇲🇽",
+        flag: "MX",
     },
     RSA: {
         code: "RSA",
         name: "Sydafrika",
-        flag: "🇿🇦",
+        flag: "ZA",
     },
     KOR: {
         code: "KOR",
         name: "Sydkorea",
-        flag: "🇰🇷",
+        flag: "KR",
     },
     CZE: {
         code: "CZE",
         name: "Tjeckien",
-        flag: "🇨🇿",
+        flag: "CZ",
     },
         CAN: {
         code: "CAN",
         name: "Kanada",
-        flag: "🇨🇦",
+        flag: "CA",
     },
 
     BIH: {
         code: "BIH",
         name: "Bosnien Hercegovina",
-        flag: "🇧🇦",
+        flag: "BA",
     },
 
     QAT: {
         code: "QAT",
         name: "Qatar",
-        flag: "🇶🇦",
+        flag: "QA",
     },
 
     SUI: {
         code: "SUI",
         name: "Schweiz",
-        flag: "🇨🇭",
+        flag: "CH",
     },
     BRA: {
         code: "BRA",
         name: "Brasilien",
-        flag: "🇧🇷",
+        flag: "BR",
     },
 
     MAR: {
         code: "MAR",
         name: "Marocko",
-        flag: "🇲🇦",
+        flag: "MA",
     },
 
     HAI: {
         code: "HAI",
         name: "Haiti",
-        flag: "🇭🇹",
+        flag: "HT",
     },
     SCO: {
         code: "SCO",
         name: "Skottland",
-        flag: "🏴",
+        flag: "GB-SCT",
     },
     USA: {
         code: "USA",
         name: "USA",
-        flag: "🇺🇸",
+        flag: "US",
     },
     PAR: {
         code: "PAR",
         name: "Paraguay",
-        flag: "🇵🇾",
+        flag: "PY",
     },
     AUS: {
         code: "AUS",
         name: "Australien",
-        flag: "🇦🇺",
+        flag: "AU",
     },
 
     TUR: {
         code: "TUR",
         name: "Turkiet",
-        flag: "🇹🇷",
+        flag: "TR",
     },
     GER: {
         code: "GER",
         name: "Tyskland",
-        flag: "🇩🇪",
+        flag: "DE",
     },
 
     CUW: {
         code: "CUW",
         name: "Curaçao",
-        flag: "🇨🇼",
+        flag: "CW",
     },
 
     CIV: {
         code: "CIV",
         name: "Elfenbenskusten",
-        flag: "🇨🇮",
+        flag: "CI",
     },
 
     ECU: {
         code: "ECU",
         name: "Ecuador",
-        flag: "🇪🇨",
+        flag: "EC",
     },
     NED: {
         code: "NED",
         name: "Holland",
-        flag: "🇳🇱",
+        flag: "NL",
     },
 
     JPN: {
         code: "JPN",
         name: "Japan",
-        flag: "🇯🇵",
+        flag: "JP",
     },
 
     SWE: {
         code: "SWE",
         name: "Sverige",
-        flag: "🇸🇪",
+        flag: "SE",
     },
 
     TUN: {
         code: "TUN",
         name: "Tunisien",
-        flag: "🇹🇳",
+        flag: "TN",
     },
     BEL: {
         code: "BEL",
         name: "Belgien",
-        flag: "🇧🇪",
+        flag: "BE",
     },
 
     EGY: {
         code: "EGY",
         name: "Egypt",
-        flag: "🇪🇬",
+        flag: "EG",
     },
 
     IRN: {
         code: "IRN",
         name: "Iran",
-        flag: "🇮🇷",
+        flag: "IR",
     },
 
     NZL: {
         code: "NZL",
         name: "Nya Zeeland",
-        flag: "🇳🇿",
+        flag: "NZ",
     },
     ESP: {
         code: "ESP",
         name: "Spanien",
-        flag: "🇪🇸",
+        flag: "ES",
     },
 
     KSA: {
         code: "KSA",
         name: "Saudi Arabien",
-        flag: "🇸🇦",
+        flag: "SA",
     },
 
     URU: {
         code: "URU",
         name: "Uruguay",
-        flag: "🇺🇾",
+        flag: "UY",
     },
 
     CPV: {
         code: "CPV",
         name: "Kap Verde",
-        flag: "🇨🇻",
+        flag: "CV",
     },
     FRA: {
         code: "FRA",
         name: "Frankrike",
-        flag: "🇫🇷",
+        flag: "FR",
     },
 
     SEN: {
         code: "SEN",
         name: "Senegal",
-        flag: "🇸🇳",
+        flag: "SN",
     },
 
     IRQ: {
         code: "IRQ",
         name: "Irak",
-        flag: "🇮🇶",
+        flag: "IQ",
     },
 
     NOR: {
         code: "NOR",
         name: "Norge",
-        flag: "🇳🇴",
+        flag: "NO",
     },
     ARG: {
         code: "ARG",
         name: "Argentina",
-        flag: "🇦🇷",
+        flag: "AR",
     },
 
     ALG: {
         code: "ALG",
         name: "Algeriet",
-        flag: "🇩🇿",
+        flag: "DZ",
     },
 
     AUT: {
         code: "AUT",
         name: "Österrike",
-        flag: "🇦🇹",
+        flag: "AT",
     },
 
     JOR: {
         code: "JOR",
         name: "Jordanien",
-        flag: "🇯🇴",
+        flag: "JO",
     },
     POR: {
         code: "POR",
         name: "Portugal",
-        flag: "🇵🇹",
+        flag: "PT",
     },
 
     COD: {
         code: "COD",
         name: "DR Kongo",
-        flag: "🇨🇩",
+        flag: "CD",
     },
 
     UZB: {
         code: "UZB",
         name: "Uzbekistan",
-        flag: "🇺🇿",
+        flag: "UZ",
     },
 
     COL: {
         code: "COL",
         name: "Colombia",
-        flag: "🇨🇴",
+        flag: "CO",
     },
     ENG: {
         code: "ENG",
         name: "England",
-        flag: "🏴",
+        flag: "GB-ENG",
     },
 
     CRO: {
         code: "CRO",
         name: "Kroatien",
-        flag: "🇭🇷",
+        flag: "HR",
     },
 
     GHA: {
         code: "GHA",
         name: "Ghana",
-        flag: "🇬🇭",
+        flag: "GH",
     },
 
     PAN: {
         code: "PAN",
         name: "Panama",
-        flag: "🇵🇦",
+        flag: "PA",
     },
 };

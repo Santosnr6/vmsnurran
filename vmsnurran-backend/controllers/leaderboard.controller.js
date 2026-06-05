@@ -39,6 +39,7 @@ export const getLeaderboard = async (req, res, next) => {
             return {
                 userId: entry.userId,
                 username: entry.username,
+                name : entry.firstName + ' ' + entry.lastName,
                 totalPoints,
                 correctResults,
                 correctOutcomes,

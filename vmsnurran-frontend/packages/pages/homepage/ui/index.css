@@ -33,4 +33,16 @@
         gap: 1rem;
         width: 100%;
     }
+
+    .page__leaderboard-section {
+        width: 100%;
+        display: grid;
+        gap: .75rem;
+        
+        .page__leaderboard {
+            list-style: none;
+            border-radius: 16px;
+            overflow: hidden;
+        }
+    }
 }

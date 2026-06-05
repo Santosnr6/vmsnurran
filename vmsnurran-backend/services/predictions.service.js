@@ -16,6 +16,8 @@ export const getPredictions = async () => {
             return {
                 ...prediction.toObject(),
                 username: user?.username || "Unknown user",
+                firstName: user?.firstName || "Unknown",
+                lastName: user?.lastName || "Unknown",
             };
         });
 

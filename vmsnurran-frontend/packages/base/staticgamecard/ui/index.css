@@ -1,0 +1,86 @@
+.game {
+    display: grid;
+    gap: 1rem;
+    border-radius: 16px;
+    border: 1px solid var(--blue);
+    padding: .5rem;
+
+    .game__top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .game__title {
+            font-size: 1rem;
+            font-weight: 300;
+        }
+        
+        .game__status {
+            font-size: .75rem;
+            font-weight: 300;
+            background-color: var(--gold-bg);
+            color: var(--yellow);
+            padding: .25rem .5rem;
+            border-radius: 24px;
+        }
+    }
+
+    .game__middle {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+    }
+    
+    .game__bottom {
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 1rem;
+
+        .game__flag {
+            width: 50px;
+        }
+        
+        .game__input {
+            width: 50px;
+            aspect-ratio: 1;
+            font-weight: 700;
+            text-align: center;
+            border-radius: 5px;
+            background-color: var(--blue-dark);
+            border: 1px solid var(--blue);
+            color: var(--white);
+        }
+        
+        .game__input:focus {
+            border: 1px solid var(--blue);
+        }
+
+        .game__result {
+            padding: 1rem;
+            border-radius: 8px;
+        }
+
+        .game__result--pending {
+            background: rgba(37, 99, 235, 0.15);
+            color: #93c5fd;
+        }
+
+        .game__result--correct {
+            background: rgba(22, 163, 74, 0.15);
+            color: #86efac;
+        }
+
+        .game__result--outcome {
+            background: rgba(234, 179, 8, 0.15);
+            color: #fde68a;
+        }
+
+        .game__result--wrong {
+            background: rgba(220, 38, 38, 0.15);
+            color: #fca5a5;
+        }
+        
+    }
+}
