@@ -6,6 +6,8 @@ export const registerUser = async (req, res, next) => {
     const user = req.body;
     const result = await addNewUser({
         userId : crypto.randomUUID().substring(0, 5),
+        firstName : user.firstName,
+        lastName : user.lastName,
         username : user.username,
         password : await hashPassword(user.password),
         role : 'user'
@@ -37,7 +39,8 @@ export const loginUser = async (req, res, next) => {
             res.json({
                 success : true,
                 message : 'User logged in successfully',
-                token
+                token,
+                role : result.user.role
             });
         } else {
             next({

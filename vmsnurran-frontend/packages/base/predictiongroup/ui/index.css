@@ -1,0 +1,66 @@
+.group {
+    background: var(--blue-bg);
+    border: 1px solid #25395e;
+    border-radius: 24px;
+    overflow: hidden;
+    
+    .group__header {
+        width: 100%;
+        padding: 1.5rem;
+        
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        
+        background: none;
+        border: none;
+        
+        color: white;
+        
+        cursor: pointer;
+        
+        .group__info {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .group__badge {
+            background: var(--gold-bg);
+            
+            color: var(--yellow);
+            
+            font-weight: 700;
+            
+            padding: 0.5rem 1rem;
+            
+            border-radius: 999px;
+        }
+        
+        .group__count {
+            color: #b7c4dd;
+        }
+        
+        .group__icon {
+            transition: 0.2s;
+        }
+        
+        .group__icon--open {
+            transform: rotate(180deg);
+        }
+    }
+
+    .group__content {
+        display: grid;
+        gap: 1rem;
+        padding: 0 1.5rem;
+    }
+
+    .group__content--hidden {
+        display: none;
+    }
+}
+
+.group.open {
+    padding-bottom: 1.5rem;
+}

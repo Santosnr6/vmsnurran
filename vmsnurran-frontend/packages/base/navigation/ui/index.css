@@ -1,0 +1,29 @@
+.nav {
+    border-top: 1px solid var(--grey);
+    border-radius: 10px 10px 0 0;
+    background-color: var(--blue-dark);
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+
+    .nav__link {
+        color: var(--grey);
+        flex: 1;
+        text-align: center;
+        padding: 1.5rem 0;
+        text-decoration: none;
+        border-left: 1px solid var(--grey);
+        cursor: pointer;
+    }
+
+    .nav__link:first-child {
+        border: none;
+    }
+
+    .nav__link:hover, .nav__link:active {
+        background-color: var(--grey);
+        color: var(--blue-dark);
+    }
+}

@@ -1,0 +1,18 @@
+.prediction-form {
+    display: grid;
+    gap: 2rem;
+}
+
+.groups {
+    width: 100%;
+    display: grid;
+    gap: 1rem;
+}
+
+.form__select {
+    padding: .75rem 1rem;
+    background-color: var(--blue-light);
+    border: none;
+    border-radius: 15px;
+    color: var(--white);
+}
