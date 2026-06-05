@@ -27,6 +27,9 @@ app.use('/api/predictions', predictionsRouter);
 app.use('/api/leaderboard', leaderboardRouter);
 app.use('/api/teams', teamsRouter);
 
+console.log("MONGO_URI exists:", Boolean(process.env.MONGO_URI));
+console.log("JWT_SECRET exists:", Boolean(process.env.JWT_SECRET));
+
 // Database
 database.on('error', (error) => console.log(error));
 database.once('connected', () => {
