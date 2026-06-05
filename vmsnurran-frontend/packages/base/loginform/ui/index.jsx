@@ -48,7 +48,7 @@ export const LoginForm = () => {
         onError: (error) => {
             console.log(error);
             setErrorMsg(
-                'Felakt användarnamn eller lösenord'
+                'Felaktigt användarnamn eller lösenord'
             );
         }
     });
