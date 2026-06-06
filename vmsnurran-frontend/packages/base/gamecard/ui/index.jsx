@@ -61,9 +61,7 @@ export const GameCard = ({game}) => {
                 ) : null}
             </div>
             <div className="game__bottom">
-                <p className="game__team">
-                    { game.homeTeam }
-                </p>
+                <img src={`https://flagcdn.com/${homeTeam?.team.flag.toLowerCase()}.svg`} alt="" className="game__flag" />
                 <input
                     type="number"
                     name={`game-${game.gameNumber}-homeScore`}
@@ -81,9 +79,7 @@ export const GameCard = ({game}) => {
                     defaultValue="0"
                     required
                 />
-                <p className="game__team">
-                    { game.awayTeam }
-                </p>
+                <img src={`https://flagcdn.com/${awayTeam?.team.flag.toLowerCase()}.svg`} alt="" className="game__flag" />
                 
             </div>
         </article>

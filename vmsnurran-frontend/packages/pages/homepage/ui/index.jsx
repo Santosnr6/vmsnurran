@@ -65,6 +65,7 @@ export const HomePage = () => {
                             return <LeaderboardEntry 
                                 position={index + 1}
                                 user={ user }
+                                key={ user.userId }
                             />
                         })
                     }

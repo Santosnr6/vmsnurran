@@ -38,8 +38,9 @@ export const LeaderboardPage = () => {
                     {
                         leaderboardData?.leaderboard.map((user, index) => {
                             return <LeaderboardEntry 
-                            position={index + 1}
-                            user={ user }
+                                position={index + 1}
+                                user={ user }
+                                key={ user.userId }
                             />
                         })
                     }
