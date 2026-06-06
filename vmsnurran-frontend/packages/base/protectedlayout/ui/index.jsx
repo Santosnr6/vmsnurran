@@ -1,11 +1,21 @@
 import { Navigate, Outlet } from "react-router-dom";
 import { useAuthStore } from "@vmsnurran/authstore";
 import { Navigation } from '@vmsnurran/navigation';
+import { isTokenExpired } from "@vmsnurran/jwt";
+import { useEffect } from "react";
 
 export function ProtectedRoute() {
-    const { token } = useAuthStore();
+    const { token, logout } = useAuthStore();
 
-    if (!token) {
+    const invalidToken = !token || isTokenExpired(token);
+
+    useEffect(() => {
+        if (token && isTokenExpired(token)) {
+            logout();
+        }
+    }, [token, logout]);
+
+    if (invalidToken) {
         return <Navigate to="/" replace />;
     }
 

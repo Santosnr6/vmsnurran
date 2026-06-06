@@ -64,3 +64,13 @@
 .group.open {
     padding-bottom: 1.5rem;
 }
+
+@media screen and (max-width: 410px) {
+    .group {
+        .group__header, .group__content {
+            padding: .75rem !important;
+        }
+
+
+    }
+}

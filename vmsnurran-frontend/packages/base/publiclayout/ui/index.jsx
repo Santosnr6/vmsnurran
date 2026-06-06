@@ -1,10 +1,21 @@
 import { useAuthStore } from "@vmsnurran/authstore";
 import { Navigate, Outlet } from "react-router-dom";
+import { isTokenExpired } from "@vmsnurran/jwt";
+import { useEffect } from "react";
 
 export function PublicOnlyRoute() {
-    const { token } = useAuthStore();
+    const { token, logout } = useAuthStore();
 
-    if (token) {
+    const hasValidToken = token && !isTokenExpired(token);
+    const hasExpiredToken = token && isTokenExpired(token);
+
+    useEffect(() => {
+        if (hasExpiredToken) {
+            logout();
+        }
+    }, [hasExpiredToken, logout]);
+
+    if (hasValidToken) {
         return <Navigate to="/me" replace />;
     }
 
