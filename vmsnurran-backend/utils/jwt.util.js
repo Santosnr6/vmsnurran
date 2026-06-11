@@ -4,7 +4,7 @@ export const signToken = (payload) => {
     const token = jwt.sign(
         payload,
         process.env.MYSECRET,
-        { expiresIn : 30 }
+        { expiresIn : 60 * 60 * 24 }
     );
     return token;
 }

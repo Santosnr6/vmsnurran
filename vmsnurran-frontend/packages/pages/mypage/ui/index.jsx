@@ -51,8 +51,9 @@ export const MyPage = () => {
                 </>
             ) : (
                 <>
-                    <h2 className="page__subtitle">Gör dina VM-tips för 2026 nedan</h2>
-                    <PredictionView />
+                    <h2 className="page__subtitle">Deadline har passerat</h2>
+                    {/* <h2 className="page__subtitle">Gör dina VM-tips för 2026 nedan</h2>
+                    <PredictionView /> */}
                 </>
             )}
         
